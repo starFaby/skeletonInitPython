@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                {% if current_user.is_authenticated %}
+                {% if current_user.id == 'starfaby' %}
+                {% if current_user.isadmin == True %}
+                {% if current_user.email == 'star._faby@hotmail.com' %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Admin
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+                {% endif %}
+                {% endif %}
+                {% endif %}
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                </li>
+                {% if current_user.is_authenticated %}
+                <li class="nav-item pull-right">
+                    <a href="/camera" class="nav-link">Camara</a>
+                </li>
+                {% endif %}
+            </ul>
+            <div class="pull-right">
+                {% if current_user.is_authenticated %}
+                <span>Bienvenido: {{current_user.id}}</span>
+                <img src="{{current_user.avatar}}" alt="" style="width: 3vw; height: 3vw;">
+                <button class="btn btn-success"><a href="/logout">Logout</a></button>
+                {% else %}
+                <button class="btn btn-danger"><a class="nav-link" href="loginin">Login In</a></button>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</nav>

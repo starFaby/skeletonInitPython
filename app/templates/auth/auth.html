@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block title %}
+{{ super() }}
+Auth
+{% endblock%}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-5">
+            <h2 class="well text-center">Registrate</h2>
+            <form action="/createauth" method="post" contextmenu="">
+                <div class="form-group">
+                    <label for="Cedula">Cedula</label>
+                    <input type="text" class="form-control" id="txtCedula" name="txtCedula" aria-describedby="emailHelp"
+                        placeholder="email...">
+                </div>
+                <div class="form-group">
+                    <label for="Nombres">Nombres</label>
+                    <input type="text" class="form-control" id="txtNombres" name="txtNombres"
+                        aria-describedby="emailHelp" placeholder="Nombres...">
+                </div>
+                <div class="form-group">
+                    <label for="Apellidos">Apellidos</label>
+                    <input type="text" class="form-control" id="txtApellidos" name="txtApellidos"
+                        aria-describedby="emailHelp" placeholder="Apellidos...">
+                </div>
+                <div class="form-group">
+                    <label for="Username">Username</label>
+                    <input type="text" class="form-control" id="txtUsername" name="txtUsername" placeholder="Username...">
+                </div>
+                <div class="form-group">
+                    <label for="Email">Email</label>
+                    <input type="email" class="form-control" id="txtEmail" name="txtEmail" placeholder="Email...">
+                </div>
+                <div class="form-group">
+                    <label for="Password">Password</label>
+                    <input type="password" class="form-control" id="txtPassword" name="txtPassword"
+                        placeholder="Password...">
+                </div>
+                <div class="form-group">
+                    <label for="CellPhone">CellPhone</label>
+                    <input type="text" class="form-control" id="txtCelphone" name="txtCelphone" placeholder="CellPhone...">
+                </div>
+                <div class="form-group">
+                    <label for="Avatar">Avatar</label>
+                    <input type="file" class="form-control" id="imgAvatar" name="imgAvatar" placeholder="Avatar">
+                </div>
+                <div class="form-group">
+                    <label for="Estado">Estado</label>
+                    <select class="form-select" aria-label="Default select example" id="txtEstado" name="txtEstado">
+                        <option selected>Seleccione una opcion</option>
+                        <option value="1">Activo</option>
+                        <option value="2">Inactivo</option>
+                    </select>
+                </div>
+
+                <hr>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+            <div class="pull-right">
+                <span><a href="loginin">Login In...</a></span>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

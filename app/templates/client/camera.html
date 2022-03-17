@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block title %}
+{{ super() }}
+Index
+{% endblock%}
+{% block content %}
+<div class="container">
+    <h2 class="well text-center">Camara Principal</h2>
+    <section class="section">
+        <div class="columns">
+            <div class="column has-text-centered">
+                <figure class="image has-text-centered well">
+                    <img  class="" src="./camerastreaming" style="width: 85vw" alt="imagen">
+                </figure>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column has-text-centered">
+                <a href="./tomar_foto_descargar" target="_blank" class="button is-success mb-2">
+                    <i class="fa fa-camera fa-xs"></i>&nbsp;
+                    <i class="fa fa-download">Descargar </i>
+                </a>
+                <button id="btnTomarFotoServidor" class="button is-info mb-2">
+                    <i class="fa fa-camera">foto</i>
+                </button>
+                <button id="btnIniciarGrabacion" class="button is-danger mb-2">
+                    <i class="fa fa-circle">grabar</i>
+                </button>
+                <button id="btnDetenerGrabacion" class="button is-primary mb-2">
+                    <i class="fa fa-stop"></i>Detener
+                </button>
+                <div class="notification is-primary mt-2" id="estado">Aquí aparecerá la información</div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <form action="/voice" method="post">
+            <label for="">Frase</label>
+            <input type="text" id="txtFrase" name="txtFrase">
+            <hr>
+            <button type="submit">Escuchar</button>
+        </form>
+    </section>
+    <!---->
+    <!---->
+        
+    <!---->
+    <!---->
+    <hr>
+    <section>
+        <button  class="btn btn-primary" id="btnEscuchar" name="btnEscuchar">Escuchar</button>
+    </section>
+
+</div>
+{% endblock %}
